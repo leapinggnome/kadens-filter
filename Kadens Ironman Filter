@@ -1,0 +1,11 @@
+{
+    "name": "Kadens Ironman Filter",
+    "description": "filter I made",
+    "modules": [
+        {
+            "name": "Kadens Ironman Filter",
+            "moduleJsonUrl": "https://github.com/leapinggnome/kadens-filter/blob/main/Kadens%20Ironman%20Filter.json",
+            "moduleRs2fUrl": "https://github.com/leapinggnome/kadens-filter/blob/main/Kadens%20Ironman%20Filter.rs2f"
+        }
+    ]
+}
