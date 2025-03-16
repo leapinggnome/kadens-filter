@@ -2,29 +2,11 @@
     "name": "Kadens Ironman Filter"
 }
 
-// ==================== TABLE OF CONTENTS ================== //
-// 1. VALUE TIERS  - Defines item value thresholds           //
-// 2. COLORS       - Assigns colors for highlighting         //
-// 3. ITEM HIDES   - Hides low-Quantity items                //
-// 4. MEGA DROPS   - High-value rare items                   //
-// 5. ALCH DROPS   - High-alch items                         //
-// 6. MID-TIER     - Mid-value items                         //
-// 7. FARMER       - Herbs and seeds                         //
-// ==========================================================//
-
-
-
-// ╔══════════════════════════════════════╗  
-// ║         COLOR DEFINITIONS            ║  
-// ╚══════════════════════════════════════╝  
 
 #define GOLD "ffD59F00"
 
 
 
-// ╔══════════════════════════════════════╗  
-// ║          COLOR & VISIBILITY          ║  
-// ╚══════════════════════════════════════╝  
 
 #define COLOR2(_fg) textColor = _fg; borderColor = _fg;
 #define COLOR3(_fg, _bg) textColor = _fg; borderColor = _fg; backgroundColor = _bg;
@@ -34,9 +16,6 @@
 
 
 
-// ╔══════════════════════════════════════╗  
-// ║       DEFENDER HIGHLIGHTS            ║  
-// ╚══════════════════════════════════════╝  
 
 #define TEXT_HIGHLIGHT(_name, _color) if (name:_name) { color = _color; textAccent = 2; }
 
@@ -51,9 +30,6 @@ TEXT_HIGHLIGHT("Dragon defender", RED)
 
 
 
-// ╔══════════════════════════════════════╗  
-// ║        POTION HIGHLIGHTS             ║  
-// ╚══════════════════════════════════════╝  
 
 TEXT_HIGHLIGHT("Super restore*", "ffe91e63")
 TEXT_HIGHLIGHT("Saradomin brew*", YELLOW)
@@ -68,9 +44,6 @@ TEXT_HIGHLIGHT("Divine Bastion potion*", "ffdb721c")
 
 
 
-// ╔══════════════════════════════════════╗  
-// ║          COX HIGHLIGHTS              ║  
-// ╚══════════════════════════════════════╝  
 
 TEXT_HIGHLIGHT("Overload*", "ff1e88e5")
 TEXT_HIGHLIGHT("Prayer enhance*", MAGENTA)
@@ -83,9 +56,6 @@ TEXT_HIGHLIGHT("Noxifer", "ff7C1ADF")
 
 
 
-// ╔══════════════════════════════════════╗  
-// ║          TOA HIGHLIGHTS              ║  
-// ╚══════════════════════════════════════╝  
 
 TEXT_HIGHLIGHT("Ambrosia*", "ffE3ECE3")
 TEXT_HIGHLIGHT("Liquid adrenaline*", "ff35C6D7")
@@ -93,12 +63,6 @@ TEXT_HIGHLIGHT("Nectar*", YELLOW)
 TEXT_HIGHLIGHT("Tears of elidinis*", "ffe91e63")
 
 
-
-// ╔══════════════════════════════════════════════════════╗  
-// ║             🗑️ HIDE LOW QUANTITY DROPS 🗑️            ║  
-// ║                Oh boy... 1x Gold Ore.                ║  
-// ║  Maybe if I collect 10,000 of these, I'll be rich?   ║  
-// ╚══════════════════════════════════════════════════════╝  
 
 HIDE("Uncut emerald" && quantity:<2)
 HIDE("Uncut ruby" && quantity:<2)
@@ -111,12 +75,6 @@ HIDE("" && quantity:<2)
 
 
 
-// ╔══════════════════════════════════════════════════════╗  
-// ║                🌟 MEGA RARE DROPS 🌟                 ║  
-// ║  You see the shiny purple light...                   ║  
-// ╚══════════════════════════════════════════════════════╝  
-
-// parameterize as desired
 #define MEGA(_name) if(name:_name) {color = RED;  \
 backgroundColor = WHITE;  \
 borderColor = RED;  \
@@ -257,11 +215,6 @@ MEGA("")
 
 
 
-// ╔══════════════════════════════════════════════════════╗  
-// ║                 🔥 HIGH ALCHEMY 🔥                   ║  
-// ║  No bank? No problem. Just turn it into coins.       ║  
-// ║  Another day, another Nature Rune sacrificed.        ║  
-// ╚══════════════════════════════════════════════════════╝ 
 
 // parameterize as desired
 #define ALCH(_name) if(name:_name) {color = BLACK; \
@@ -312,11 +265,6 @@ ALCH("")
 
 
 
-// ╔══════════════════════════════════════════════════════╗
-// ║                    💀 MID DROPS 💀                   ║
-// ║   Oh wow... another Dust Battlestaff... so exciting. ║
-// ║  Too good to ignore, too bad to care. Pain.          ║
-// ╚══════════════════════════════════════════════════════╝
 
 #define MID(_name) if(name:_name) {color = MITHRIL; \
 backgroundColor = GROUNDITEMS_LOW; \
@@ -383,14 +331,6 @@ MID("")
 
 
 
-
-// ╔══════════════════════════════════════════════════════╗
-// ║                     FARMING 🌿                       ║
-// ║               Herbs & Seeds Section                  ║
-// ║    Rare & useful herbs, seeds for profit & XP.       ║
-// ╚══════════════════════════════════════════════════════╝
-
-// parameterize as desired
 #define FARM(_name) if(name:_name) {color = GREEN; \
 textAccent = 1; \
 showLootbeam = true;\
